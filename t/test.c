@@ -112,19 +112,25 @@ static void test_simple(void)
     CHECK_MULTI(unsigned , "%u", 0, UINT_MAX);
     CHECK_MULTI(unsigned long, "%lu", 0, ULONG_MAX);
     CHECK_MULTI(unsigned long long, "%llu", 0, ULLONG_MAX);
+#ifndef _WIN32
     CHECK_MULTI(size_t, "%zu", 0, SIZE_MAX);
+#endif
 
     CHECK_MULTI(unsigned short, "%hx", 0, USHRT_MAX);
     CHECK_MULTI(unsigned , "%x", 0, UINT_MAX);
     CHECK_MULTI(unsigned long, "%lx", 0, ULONG_MAX);
     CHECK_MULTI(unsigned long long, "%llx", 0, ULLONG_MAX);
+#ifndef _WIN32
     CHECK_MULTI(size_t, "%zx", 0, SIZE_MAX);
+#endif
 
     CHECK_MULTI(unsigned short, "%hX", 0, USHRT_MAX);
     CHECK_MULTI(unsigned , "%X", 0, UINT_MAX);
     CHECK_MULTI(unsigned long, "%lX", 0, ULONG_MAX);
     CHECK_MULTI(unsigned long long, "%llX", 0, ULLONG_MAX);
+#ifndef _WIN32
     CHECK_MULTI(size_t, "%zX", 0, SIZE_MAX);
+#endif
 
     CHECK_MULTI(int, "%7d", INT_MIN, INT_MAX);
     CHECK_MULTI(int, "%07d", INT_MIN, INT_MAX);
