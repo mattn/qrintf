@@ -106,7 +106,7 @@ if (basename($cc) =~ m{^g(?:cc|\+\+)}) {
     push @ARGV, map { get_preprocessed_fn($_) } @files;
     push @ARGV, '-o', $output_fn
         if defined $output_fn;
-    run_cmd($^X, $cc, @ARGV);
+    run_cmd($cc, @ARGV);
 
     exit 0;
 }

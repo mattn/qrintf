@@ -133,6 +133,7 @@ static void test_simple(void)
     CHECK_MULTI(unsigned, "%7x", 0, UINT_MAX);
     CHECK_MULTI(unsigned, "%07x", 0, UINT_MAX);
 
+#ifndef _WIN32
     CHECK_SNPRINTF(8, "%s", "abcdef"); /* below the bounds */
     CHECK_SNPRINTF(8, "1234%s", "abcdef"); /* partial write */
     CHECK_SNPRINTF(8, "1234567890%s", "abcdef"); /* no write */
@@ -145,6 +146,7 @@ static void test_simple(void)
     CHECK_SNPRINTF(3, "%x",   UINT_MAX);
     CHECK_SNPRINTF(3, "%lx",  ULONG_MAX);
     CHECK_SNPRINTF(3, "%llx", ULLONG_MAX);
+#endif
 }
 
 static void test_composite(void)
