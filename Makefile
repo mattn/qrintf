@@ -2,7 +2,6 @@ PREFIX=/usr/local
 TEST_CFLAGS=-D_QRINTF_COUNT_CALL=1 -Wall -g -Werror
 AOUT=./test
 ifeq (Windows_NT, $(OS))
-CC=cc
 AOUT=test.exe
 endif
 
